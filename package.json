@@ -1,0 +1,44 @@
+{
+  "name": "cruid",
+  "version": "1.0.0",
+  "description": "Distributed collision-resistant IDs optimized for CockroachDB PKs",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "engines": {
+    "node": ">=14.16"
+  },
+  "scripts": {
+    "lint": "standard",
+    "pretest": "npm run lint",
+    "test": "c8 --reporter=html --reporter=text ava",
+    "coverage": "c8 report --reporter=html --reporter=text-lcov | coveralls",
+    "//benchmark": "nanobench benchmark",
+    "benchmark-cruid": "nanobench benchmark/index.js > benchmark/output-cruid",
+    "benchmark-cuid": "nanobench benchmark/cuid.js > benchmark/output-cuid",
+    "benchmark-compare": "nanobench-compare benchmark/output-cruid benchmark/output-cuid",
+    "compare": "npm run benchmark-cruid; npm run benchmark-cuid; npm run benchmark-compare",
+    "release": "standard-version"
+  },
+  "repository": "nexdrew/cruid",
+  "funding": "https://github.com/nexdrew/cruid?sponsor=1",
+  "keywords": [
+    "guid",
+    "id",
+    "uid",
+    "unique id",
+    "uuid",
+    "cockroach",
+    "cockroachdb",
+    "primary key",
+    "cuid",
+    "scuid"
+  ],
+  "author": "nexdrew",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nexdrew/cruid/issues"
+  },
+  "homepage": "https://github.com/nexdrew/cruid#readme"
+}
