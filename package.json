@@ -14,11 +14,13 @@
     "pretest": "npm run lint",
     "test": "c8 --reporter=html --reporter=text ava",
     "coverage": "c8 report --reporter=html --reporter=text-lcov | coveralls",
-    "//benchmark": "nanobench benchmark",
+    "benchmark": "nanobench benchmark",
     "benchmark-cruid": "nanobench benchmark/index.js > benchmark/output-cruid",
     "benchmark-cuid": "nanobench benchmark/cuid.js > benchmark/output-cuid",
-    "benchmark-compare": "nanobench-compare benchmark/output-cruid benchmark/output-cuid",
-    "compare": "npm run benchmark-cruid; npm run benchmark-cuid; npm run benchmark-compare",
+    "benchmark-scuid": "nanobench benchmark/scuid.js > benchmark/output-scuid",
+    "benchmark-compare-cuid": "nanobench-compare benchmark/output-cruid benchmark/output-cuid",
+    "benchmark-compare-scuid": "nanobench-compare benchmark/output-cruid benchmark/output-scuid",
+    "compare": "npm run benchmark-cruid; npm run benchmark-cuid; npm run benchmark-scuid; npm run benchmark-compare-cuid; npm run benchmark-compare-scuid",
     "release": "standard-version"
   },
   "repository": "nexdrew/cruid",
@@ -40,5 +42,15 @@
   "bugs": {
     "url": "https://github.com/nexdrew/cruid/issues"
   },
-  "homepage": "https://github.com/nexdrew/cruid#readme"
+  "homepage": "https://github.com/nexdrew/cruid#readme",
+  "devDependencies": {
+    "ava": "^4.3.1",
+    "c8": "^7.12.0",
+    "coveralls": "^3.1.1",
+    "cuid": "^2.1.8",
+    "nanobench": "^2.1.1",
+    "scuid": "^1.1.0",
+    "standard": "^17.0.0",
+    "standard-version": "^9.5.0"
+  }
 }
