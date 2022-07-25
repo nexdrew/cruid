@@ -18,9 +18,11 @@
     "benchmark-cruid": "nanobench benchmark/index.js > benchmark/output-cruid",
     "benchmark-cuid": "nanobench benchmark/cuid.js > benchmark/output-cuid",
     "benchmark-scuid": "nanobench benchmark/scuid.js > benchmark/output-scuid",
+    "benchmark-uuid": "nanobench benchmark/uuid.js > benchmark/output-uuid",
     "benchmark-compare-cuid": "nanobench-compare benchmark/output-cruid benchmark/output-cuid",
     "benchmark-compare-scuid": "nanobench-compare benchmark/output-cruid benchmark/output-scuid",
-    "compare": "npm run benchmark-cruid; npm run benchmark-cuid; npm run benchmark-scuid; npm run benchmark-compare-cuid; npm run benchmark-compare-scuid",
+    "benchmark-compare-uuid": "nanobench-compare benchmark/output-cruid benchmark/output-uuid",
+    "compare": "npm run benchmark-cruid; npm run benchmark-cuid; npm run benchmark-scuid; npm run benchmark-uuid; npm run benchmark-compare-cuid; npm run benchmark-compare-scuid; npm run benchmark-compare-uuid",
     "release": "standard-version"
   },
   "repository": "nexdrew/cruid",
