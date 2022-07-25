@@ -12,7 +12,7 @@
   "scripts": {
     "lint": "standard",
     "pretest": "npm run lint",
-    "test": "c8 --reporter=html --reporter=text ava",
+    "test": "c8 --reporter=html --reporter=text ava --serial",
     "coverage": "c8 report --reporter=html --reporter=text-lcov | coveralls",
     "benchmark": "nanobench benchmark",
     "benchmark-cruid": "nanobench benchmark/index.js > benchmark/output-cruid",
