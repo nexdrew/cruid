@@ -13,6 +13,8 @@ function noCollision (fn, iterations) {
 }
 
 test('collision resistance', t => {
+  const time = 120 * 1000
+  t.timeout(time, `collision check took more than ${time}ms`)
   t.true(noCollision(cruid, 2000000))
   t.true(noCollision(cruid.slug, 1000000))
 })
